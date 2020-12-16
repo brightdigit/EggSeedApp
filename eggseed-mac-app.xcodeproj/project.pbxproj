@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,11 @@
 		B3CBE3BA258A3F4B0078F6E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBE3B9258A3F4B0078F6E9 /* ContentView.swift */; };
 		B3CBE3BC258A3F4C0078F6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CBE3BB258A3F4C0078F6E9 /* Assets.xcassets */; };
 		B3CBE3BF258A3F4C0078F6E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CBE3BE258A3F4C0078F6E9 /* Preview Assets.xcassets */; };
+		B3F19B3A258A65DE00D63314 /* EggSeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = B3F19B39258A65DE00D63314 /* EggSeedKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B315A76D258A5A6B004157D4 /* EggSeed */ = {isa = PBXFileReference; lastKnownFileType = text; name = EggSeed; path = Packages/EggSeed; sourceTree = SOURCE_ROOT; };
 		B3CBE3B2258A3F4B0078F6E9 /* eggseed-mac-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggseed-mac-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CBE3B5258A3F4B0078F6E9 /* eggseed_mac_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eggseed_mac_appApp.swift; sourceTree = "<group>"; };
 		B3CBE3B7258A3F4B0078F6E9 /* eggseed_mac_appDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eggseed_mac_appDocument.swift; sourceTree = "<group>"; };
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F19B3A258A65DE00D63314 /* EggSeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +44,7 @@
 			children = (
 				B3CBE3B4258A3F4B0078F6E9 /* eggseed-mac-app */,
 				B3CBE3B3258A3F4B0078F6E9 /* Products */,
+				B3F19B38258A65DE00D63314 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +59,7 @@
 		B3CBE3B4258A3F4B0078F6E9 /* eggseed-mac-app */ = {
 			isa = PBXGroup;
 			children = (
+				B315A76D258A5A6B004157D4 /* EggSeed */,
 				B3CBE3B5258A3F4B0078F6E9 /* eggseed_mac_appApp.swift */,
 				B3CBE3B7258A3F4B0078F6E9 /* eggseed_mac_appDocument.swift */,
 				B3CBE3B9258A3F4B0078F6E9 /* ContentView.swift */,
@@ -74,6 +79,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B3F19B38258A65DE00D63314 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,6 +102,9 @@
 			dependencies = (
 			);
 			name = "eggseed-mac-app";
+			packageProductDependencies = (
+				B3F19B39258A65DE00D63314 /* EggSeedKit */,
+			);
 			productName = "eggseed-mac-app";
 			productReference = B3CBE3B2258A3F4B0078F6E9 /* eggseed-mac-app.app */;
 			productType = "com.apple.product-type.application";
@@ -337,6 +352,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3F19B39258A65DE00D63314 /* EggSeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EggSeedKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3CBE3AA258A3F4B0078F6E9 /* Project object */;
 }

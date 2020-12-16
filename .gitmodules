@@ -1,0 +1,4 @@
+[submodule "Packages/EggSeed"]
+	path = Packages/EggSeed
+	url = git@github.com:brightdigit/EggSeed.git
+	branch = feature/mac-app
