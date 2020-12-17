@@ -48,24 +48,61 @@ class URLFormatter : Formatter {
     return true
   }
 }
-struct ContentView: View {
+
+enum ProductType {
+  case library, executable
+}
+struct Product : Identifiable {
+  let name : String
+  let type: ProductType
   
-  @State var topping : Topping = .nuts
+  var id : String {
+    return name
+  }
+}
+struct ContentView: View {
+  @State var products : [Product] = [.init(name: "BushelKit", type: .library), .init(name: "bushel", type: .executable)]
+  @State var packageName : String = ""
     @Binding var document: eggseed_mac_appDocument
 
     var body: some View {
+      
       VStack{
-        TextField("Template", value: $document.templateURL, formatter: URLFormatter())
-        Picker("License", selection: self.$topping) {
-          ForEach(Topping.allCases) { (topping) in
-            Text(topping.rawValue)
-          }
-        }
+        Form{
+          Section(header: Text("Package").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/), content: {
+            TextField("Name", text: $packageName)
+            Divider()
+            Section(header: Text("Products")) {
+              List(self.products) { product in
+              
+                HStack(content: {
+                  Text(product.name)
+                })
+              }
+              
+              
+            }
+          })
+        }.padding()
+        List(self.products) { product in
         
-        ForEach(0..<ContinuousIntegrationSystem.allCases.count){
-          Toggle(ContinuousIntegrationSystem.allCases[$0].description, isOn: $document.ci[$0])
-        }
-        Text(self.topping.rawValue)
+          HStack(content: {
+            Text(product.name)
+          }).listRowInsets(EdgeInsets.init(top: 8, leading: 8, bottom: 8, trailing: 8))
+        }.listStyle(InsetListStyle())
+//        TextField("Template", value: $document.templateURL, formatter: URLFormatter())
+//
+//        Picker("License", selection: self.$document.license) {
+//          ForEach(License.allCases) { (license) in
+//            Text(license.rawValue)
+//          }
+//        }
+//
+//        ForEach(0..<ContinuousIntegrationSystem.allCases.count){
+//          Toggle(ContinuousIntegrationSystem.allCases[$0].description, isOn: $document.ci[$0])
+//        }
+        
+        
       }
     }
 }
